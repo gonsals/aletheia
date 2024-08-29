@@ -39,12 +39,16 @@ const tabs = [
                     comunitàries, treballem per reduir les taxes de suïcidi i
                     oferir una xarxa de suport efectiva i accessible.
                 </p>
-                <img src="/heroQuiSom.png" alt="Grupo de apoyo" />
+                <img
+                    src="/imagesProba/heroQuiSom.png"
+                    alt="Grupo de apoyo"
+                    class="w-full rounded-lg"
+                />
             </div>
         </div>
 
+        <!-- Contenido para "Què fem" -->
         <div class="tab-content" data-tab="que-fem">
-            <!-- Contenido para "Què fem" -->
             <div class="content-grid">
                 <div class="content-item">
                     <h3>Teràpia Psicològica</h3>
@@ -71,8 +75,6 @@ const tabs = [
                         d'experiències i la recuperació emocional.
                     </p>
                 </div>
-
-                <!-- Agrega más elementos según sea necesario -->
             </div>
 
             <div class="content-grid mt-5">
@@ -94,131 +96,215 @@ const tabs = [
                 </div>
             </div>
         </div>
+        <!-- Contenido para "A qui ens dirigim" -->
         <div class="tab-content" data-tab="a-qui-ens-dirigim">
-            <!-- Contenido para "A qui ens dirigim" -->
-            <div class="content-flex">
-                <div class="content-card">
-                    <h3>Persones amb Idees Suïcides</h3>
-                    <p>
-                        Oferim suport i recursos per ajudar-les a trobar
-                        alternatives saludables i a construir una xarxa de
-                        suport sòlida.
-                    </p>
-                    <img src="/heroQuiSom.png" alt="Grupo de apoyo" />
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+                <div
+                    class="prueba-bg bg-hero-qui-som min-h-[100px] md:min-h-[200px]"
+                >
+                    <span>
+                        <h3 class="text-lg mb-2">Famílies i Amics</h3>
+                        <p class="text-sm">
+                            Donem orientació i suport a aquells que conviuen amb
+                            persones en risc, ajudant-los a comprendre i
+                            gestionar la situació amb empatia i efectivitat.
+                        </p>
+                    </span>
                 </div>
-                <div class="content-card">
-                    <h3>Famílies i Amics</h3>
-                    <p>
-                        Donem orientació i suport a aquells que conviuen amb
-                        persones en risc, ajudant-los a comprendre i gestionar
-                        la situació amb empatia i efectivitat.
-                    </p>
+                <div
+                    class="prueba-bg bg-nenas-hero min-h-[100px] md:min-h-[200px]"
+                >
+                    <span>
+                        <h3>Famílies i Amics</h3>
+                        <p>
+                            Donem orientació i suport a aquells que conviuen amb
+                            persones en risc, ajudant-los a comprendre i
+                            gestionar la situació amb empatia i efectivitat.
+                        </p>
+                    </span>
                 </div>
-                <!-- Agrega más tarjetas según sea necesario -->
+                <div
+                    class="prueba-bg bg-multitud-hero min-h-[100px] md:min-h-[200px]"
+                >
+                    <span>
+                        <h3>Famílies i Amics</h3>
+                        <p>
+                            Donem orientació i suport a aquells que conviuen amb
+                            persones en risc, ajudant-los a comprendre i
+                            gestionar la situació amb empatia i efectivitat.
+                        </p>
+                    </span>
+                </div>
+            </div>
+            <div
+                class="grid
+                    grid-cols-1
+                    gap-8
+                    md:grid-cols-2
+                    mt-8"
+            >
+                <div>
+                    <img
+                        src="/imagesProba/heroQuiSom.png"
+                        alt="Grupo de apoyo"
+                        class="w-full rounded-lg"
+                    />
+                </div>
+                <div>
+                    <img
+                        src="/imagesProba/heroQuiSom.png"
+                        alt="Grupo de apoyo"
+                        class="w-full rounded-lg"
+                    />
+                </div>
             </div>
         </div>
-        <!-- Agrega más divs de contenido para las otras pestañas -->
     </div>
-</div>
 
-<style>
-    .tabs {
-        max-width: 1200px;
-        margin: 0 auto;
-        width: 100%;
-    }
-    .tab-buttons {
-        display: flex;
-        justify-content: space-between;
-        border-bottom: 2px solid #fecc59;
-    }
-    .tab-button {
-        padding: 8px 20px;
-        border: none;
-        background: none;
-        cursor: pointer;
-        font-size: 22px;
-        transition: linear 0.3s;
-        font-family: "Instrument Serif", serif;
-    }
-    .tab-button.active {
-        background-color: #fecc59;
-        border-radius: 8px 8px 0 0;
-    }
-    .tab-content {
-        display: none;
-        padding: 20px 0;
-        animation: fadeIn 0.5s ease-in-out;
-    }
-    .tab-content.active {
-        display: block;
-    }
-    .content-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-    }
-    .content-flex {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-    .content-item,
-    .content-card {
-        background-color: #fecc59;
-        padding: 20px;
-        border-radius: 5px;
+    <style>
+        .prueba-bg {
+            position: relative;
+            background-size: cover;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+        }
 
-        h3 {
-            font-size: 1.6rem;
+        .prueba-bg:hover {
+            transform: scale(1.05);
+        }
+
+        .prueba-bg h3 {
+            color: black;
+            font-size: 18px;
             margin-bottom: 10px;
         }
-    }
-    .content-card {
-        flex: 1 1 300px;
-    }
-    .content-card img {
-        max-width: 100%;
-        height: auto;
-        margin-top: 10px;
-    }
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
+
+        .prueba-bg p {
+            font-size: 14px;
         }
-        to {
+
+        .prueba-bg span {
+            border-radius: 8px 8px 0 0;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80%;
+            background: rgba(254, 204, 89, 0.9);
+            color: black;
+            padding: 10px 20px;
+            transform: translateY(70%);
+            transition:
+                transform 0.5s ease,
+                opacity 0.5s ease;
+        }
+
+        .prueba-bg:hover span {
+            transform: translateY(0);
             opacity: 1;
         }
-    }
-</style>
 
-<script>
-    function setupTabs() {
-        const tabButtons =
-            document.querySelectorAll<HTMLButtonElement>(".tab-button");
-        const tabContents =
-            document.querySelectorAll<HTMLDivElement>(".tab-content");
+        .tabs {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .tab-buttons {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid #fecc59;
+        }
+        .tab-button {
+            padding: 8px 20px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 22px;
+            transition: linear 0.3s;
+            font-family: "Instrument Serif", serif;
+        }
+        .tab-button.active {
+            background-color: #fecc59;
+            border-radius: 8px 8px 0 0;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px 0;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .content-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .content-item,
+        .content-card {
+            background-color: #fecc59;
+            padding: 20px;
+            border-radius: 5px;
 
-        tabButtons.forEach((button) => {
-            button.addEventListener("click", () => {
-                const tabId = button.getAttribute("data-tab");
+            h3 {
+                font-size: 1.6rem;
+                margin-bottom: 10px;
+            }
+        }
+        .content-card {
+            flex: 1 1 300px;
+        }
+        .content-card img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 
-                tabButtons.forEach((btn) => btn.classList.remove("active"));
-                tabContents.forEach((content) =>
-                    content.classList.remove("active")
-                );
+    <script>
+        function setupTabs() {
+            const tabButtons =
+                document.querySelectorAll<HTMLButtonElement>(".tab-button");
+            const tabContents =
+                document.querySelectorAll<HTMLDivElement>(".tab-content");
 
-                button.classList.add("active");
+            tabButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    const tabId = button.getAttribute("data-tab");
 
-                const activeContent = document.querySelector<HTMLDivElement>(
-                    `.tab-content[data-tab="${tabId}"]`
-                );
-                if (activeContent) {
-                    activeContent.classList.add("active");
-                }
+                    tabButtons.forEach((btn) => btn.classList.remove("active"));
+                    tabContents.forEach((content) =>
+                        content.classList.remove("active")
+                    );
+
+                    button.classList.add("active");
+
+                    const activeContent =
+                        document.querySelector<HTMLDivElement>(
+                            `.tab-content[data-tab="${tabId}"]`
+                        );
+                    if (activeContent) {
+                        activeContent.classList.add("active");
+                    }
+                });
             });
-        });
-    }
+        }
 
-    document.addEventListener("DOMContentLoaded", setupTabs);
-</script>
+        document.addEventListener("DOMContentLoaded", setupTabs);
+    </script>
+</div>
