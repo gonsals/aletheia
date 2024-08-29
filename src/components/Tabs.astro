@@ -1,0 +1,224 @@
+---
+const tabs = [
+    { id: "qui-som", label: "Qui som" },
+    { id: "que-fem", label: "Què fem" },
+    { id: "a-qui-ens-dirigim", label: "A qui ens dirigim" },
+    { id: "el-nostre-equip", label: "El nostre equip" },
+    { id: "els-nostres-valors", label: "Els nostres valors" },
+    { id: "governanca", label: "Governança" },
+];
+---
+
+<div class="tabs py-4 px-16">
+    <div class="tab-buttons">
+        {
+            tabs.map((tab, index) => (
+                <button
+                    class={`tab-button ${index === 0 ? "active" : ""}`}
+                    data-tab={tab.id}
+                >
+                    {tab.label}
+                </button>
+            ))
+        }
+    </div>
+    <div class="tab-contents">
+        <div class="tab-content active" data-tab="qui-som">
+            <!-- Contenido para "Qui som" -->
+            <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
+                <p>
+                    Som una cooperativa dedicada a la prevenció del suïcidi,
+                    formada per un equip de professionals compromesos amb la
+                    salut mental i el benestar emocional. La nostra missió és
+                    oferir suport i recursos a persones que experimenten idees
+                    suïcides, així com a les seves famílies i entorn, promovent
+                    la consciència i la comprensió de la problemàtica. Creiem en
+                    l'impacte positiu de la comunitat i en la importància
+                    d'actuar de manera preventiva. A través de serveis
+                    especialitzats, programes de formació i activitats
+                    comunitàries, treballem per reduir les taxes de suïcidi i
+                    oferir una xarxa de suport efectiva i accessible.
+                </p>
+                <img src="/heroQuiSom.png" alt="Grupo de apoyo" />
+            </div>
+        </div>
+
+        <div class="tab-content" data-tab="que-fem">
+            <!-- Contenido para "Què fem" -->
+            <div class="content-grid">
+                <div class="content-item">
+                    <h3>Teràpia Psicològica</h3>
+                    <p>
+                        Oferim teràpia individual i grupal per a persones amb
+                        idees suïcides, adaptant-nos a diferents edats i
+                        necessitats, amb l'objectiu de millorar la seva salut
+                        mental.
+                    </p>
+                </div>
+                <div class="content-item">
+                    <h3>Grups d'Ajuda Mútua</h3>
+                    <p>
+                        Facilitem espais de suport grupal per a persones que han
+                        perdut algú per suïcidi, promovent l'intercanvi
+                        d'experiències i la recuperació emocional.
+                    </p>
+                </div>
+                <div class="content-item">
+                    <h3>Grups d'Ajuda Mútua</h3>
+                    <p>
+                        Facilitem espais de suport grupal per a persones que han
+                        perdut algú per suïcidi, promovent l'intercanvi
+                        d'experiències i la recuperació emocional.
+                    </p>
+                </div>
+
+                <!-- Agrega más elementos según sea necesario -->
+            </div>
+
+            <div class="content-grid mt-5">
+                <div class="content-item">
+                    <h3>Grups d'Ajuda Mútua</h3>
+                    <p>
+                        Facilitem espais de suport grupal per a persones que han
+                        perdut algú per suïcidi, promovent l'intercanvi
+                        d'experiències i la recuperació emocional.
+                    </p>
+                </div>
+                <div class="content-item">
+                    <h3>Grups d'Ajuda Mútua</h3>
+                    <p>
+                        Facilitem espais de suport grupal per a persones que han
+                        perdut algú per suïcidi, promovent l'intercanvi
+                        d'experiències i la recuperació emocional.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content" data-tab="a-qui-ens-dirigim">
+            <!-- Contenido para "A qui ens dirigim" -->
+            <div class="content-flex">
+                <div class="content-card">
+                    <h3>Persones amb Idees Suïcides</h3>
+                    <p>
+                        Oferim suport i recursos per ajudar-les a trobar
+                        alternatives saludables i a construir una xarxa de
+                        suport sòlida.
+                    </p>
+                    <img src="/heroQuiSom.png" alt="Grupo de apoyo" />
+                </div>
+                <div class="content-card">
+                    <h3>Famílies i Amics</h3>
+                    <p>
+                        Donem orientació i suport a aquells que conviuen amb
+                        persones en risc, ajudant-los a comprendre i gestionar
+                        la situació amb empatia i efectivitat.
+                    </p>
+                </div>
+                <!-- Agrega más tarjetas según sea necesario -->
+            </div>
+        </div>
+        <!-- Agrega más divs de contenido para las otras pestañas -->
+    </div>
+</div>
+
+<style>
+    .tabs {
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .tab-buttons {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid #fecc59;
+    }
+    .tab-button {
+        padding: 8px 20px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 22px;
+        transition: linear 0.3s;
+        font-family: "Instrument Serif", serif;
+    }
+    .tab-button.active {
+        background-color: #fecc59;
+        border-radius: 8px 8px 0 0;
+    }
+    .tab-content {
+        display: none;
+        padding: 20px 0;
+        animation: fadeIn 0.5s ease-in-out;
+    }
+    .tab-content.active {
+        display: block;
+    }
+    .content-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    .content-flex {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .content-item,
+    .content-card {
+        background-color: #fecc59;
+        padding: 20px;
+        border-radius: 5px;
+
+        h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+    }
+    .content-card {
+        flex: 1 1 300px;
+    }
+    .content-card img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 10px;
+    }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+</style>
+
+<script>
+    function setupTabs() {
+        const tabButtons =
+            document.querySelectorAll<HTMLButtonElement>(".tab-button");
+        const tabContents =
+            document.querySelectorAll<HTMLDivElement>(".tab-content");
+
+        tabButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const tabId = button.getAttribute("data-tab");
+
+                tabButtons.forEach((btn) => btn.classList.remove("active"));
+                tabContents.forEach((content) =>
+                    content.classList.remove("active")
+                );
+
+                button.classList.add("active");
+
+                const activeContent = document.querySelector<HTMLDivElement>(
+                    `.tab-content[data-tab="${tabId}"]`
+                );
+                if (activeContent) {
+                    activeContent.classList.add("active");
+                }
+            });
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", setupTabs);
+</script>
