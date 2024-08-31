@@ -1,0 +1,70 @@
+---
+type Props = {
+    title: string;
+    description: string;
+    backgroundImage: string;
+    big?: boolean;
+    white?: boolean;
+};
+
+const { title, description, backgroundImage, big, white } =
+    Astro.props as Props;
+---
+
+<style>
+    .tab-card {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        align-items: flex-end;
+        min-height: 200px;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out;
+        background-size: cover;
+    }
+
+    .tab-card:hover {
+        transform: scale(1.05);
+    }
+
+    .tab-card-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 80%;
+        color: black;
+        padding: 1rem;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+        transform: translateY(63%);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .tab-card:hover .tab-card-content {
+        transform: translateY(0);
+    }
+
+    .big-card .tab-card-content {
+        transform: translateY(55%);
+    }
+
+    .tab-card-title {
+        font-size: 1.875rem;
+        margin-bottom: 0.5rem;
+        font-family: "Instrument Serif", serif;
+    }
+
+    .tab-card-description {
+        font-size: 0.875rem;
+    }
+</style>
+
+<div class={`tab-card ${backgroundImage} ${big ? "big-card" : ""}`}>
+    <span
+        class={`tab-card-content ${white ? "bg-[var(--bg-white)]" : "bg-[var(--yellow)]"}`}
+    >
+        <h3 class="tab-card-title">{title}</h3>
+        <p class="tab-card-description">{description}</p>
+    </span>
+</div>

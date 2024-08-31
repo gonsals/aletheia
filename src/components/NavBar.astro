@@ -1,0 +1,63 @@
+---
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+
+const currentUrl = Astro.url;
+const pathname = currentUrl.pathname;
+---
+
+<span
+    class="bg-[var(--yellow)] text-black w-full top-0 flex justify-center items-center md:gap-4 py-3 flex-col lg:flex-row text-center px-6 gap-1"
+>
+    <h3 class="font-semibold">
+        Si estàs en una crisi, si us plau posa’t en contacte.
+    </h3>
+    <a class="bg-[var(--green)] px-5 py-2 rounded-full text-white text-xs"
+        >DEMANA AJUDA</a
+    >
+</span>
+
+<header class="lg:flex md:px-20 py-4 px-6 gap-5">
+    <Astronav>
+        <div class="flex w-full justify-between items-center">
+            <a href="/"><img src="/Logo.svg" alt="logo" class="w-20 mr-4" /></a>
+            <div class="block lg:hidden">
+                <MenuIcon class="w-4 h-4 text-gray-800" />
+            </div>
+        </div>
+        <MenuItems class="hidden mt-2 lg:mt-0 lg:flex lg:items-center">
+            <ul class="flex flex-col lg:flex-row lg:gap-5 text-sm">
+                <li class=`${pathname === "/nosaltres" ? "font-semibold" : ""}`>
+                    <a href="/nosaltres">Nosaltres</a>
+                </li>
+                <li class=` ${pathname === "/serveis" ? "font-semibold" : ""}`>
+                    <a href="/serveis">Serveis</a>
+                </li>
+                <li class=` ${pathname === "/formacio" ? "font-semibold" : ""}`>
+                    <a href="/formacio">Formació</a>
+                </li>
+                <li class=` ${pathname === "/recursos" ? "font-semibold" : ""}`>
+                    <a href="/recursos">Recursos</a>
+                </li>
+                <li
+                    class=` ${pathname === "/projectes" ? "font-semibold" : ""}`
+                >
+                    <a href="/projectes">Projectes</a>
+                </li>
+                <li
+                    class=` ${pathname === "/participa" ? "font-semibold" : ""}`
+                >
+                    <a href="/participa">Participa</a>
+                </li>
+                <li class=` ${pathname === "/contacta" ? "font-semibold" : ""}`>
+                    <a href="/contacta">Contacta</a>
+                </li>
+                <li>
+                    <a
+                        class="bg-[var(--yellow)] px-5 py-2 rounded-full text-black text-xs font-medium"
+                        href="/donatiu">DONATIU</a
+                    >
+                </li>
+            </ul>
+        </MenuItems>
+    </Astronav>
+</header>

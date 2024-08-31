@@ -1,0 +1,372 @@
+---
+import Accordion from "./Accordion.astro";
+import TabCard from "./TabCard.astro";
+
+const tabs = [
+    { id: "qui-som", label: "Qui som" },
+    { id: "que-fem", label: "Què fem" },
+    { id: "a-qui-ens-dirigim", label: "A qui ens dirigim" },
+    { id: "el-nostre-equip", label: "El nostre equip" },
+    { id: "els-nostres-valors", label: "Els nostres valors" },
+    { id: "governanca", label: "Governança" },
+];
+---
+
+<div class="py-4 lg:px-16 px-6 max-w-[1200px] mx-auto w-full">
+    <div
+        class="flex justify-between border-b-2 border-[#fecc59] flex-col lg:flex-row"
+    >
+        {
+            tabs.map((tab, index) => (
+                <button
+                    class={`tab-button ${index === 0 ? "active" : ""}`}
+                    data-tab={tab.id}
+                >
+                    {tab.label}
+                </button>
+            ))
+        }
+    </div>
+    <div class="tab-contents">
+        <div class="tab-content active" data-tab="qui-som">
+            <!-- Contenido para "Qui som" -->
+            <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
+                <p>
+                    Som una cooperativa dedicada a la prevenció del suïcidi,
+                    formada per un equip de professionals compromesos amb la
+                    salut mental i el benestar emocional. La nostra missió és
+                    oferir suport i recursos a persones que experimenten idees
+                    suïcides, així com a les seves famílies i entorn, promovent
+                    la consciència i la comprensió de la problemàtica. Creiem en
+                    l'impacte positiu de la comunitat i en la importància
+                    d'actuar de manera preventiva. A través de serveis
+                    especialitzats, programes de formació i activitats
+                    comunitàries, treballem per reduir les taxes de suïcidi i
+                    oferir una xarxa de suport efectiva i accessible.
+                </p>
+                <img
+                    src="/imagesProba/heroQuiSom.png"
+                    alt="Grupo de apoyo"
+                    class="w-full rounded-lg"
+                />
+            </div>
+        </div>
+
+        <!-- Contenido para "Què fem" -->
+        <div class="tab-content" data-tab="que-fem">
+            <div class="content-grid">
+                <div class="content-item">
+                    <h3>Teràpia Psicològica</h3>
+                    <p>
+                        Oferim teràpia individual i grupal per a persones amb
+                        idees suïcides, adaptant-nos a diferents edats i
+                        necessitats, amb l'objectiu de millorar la seva salut
+                        mental.
+                    </p>
+                </div>
+                <div class="content-item">
+                    <h3>Grups d'Ajuda Mútua</h3>
+                    <p>
+                        Facilitem espais de suport grupal per a persones que han
+                        perdut algú per suïcidi, promovent l'intercanvi
+                        d'experiències i la recuperació emocional.
+                    </p>
+                </div>
+                <div class="content-item">
+                    <h3>Grups d'Ajuda Mútua</h3>
+                    <p>
+                        Facilitem espais de suport grupal per a persones que han
+                        perdut algú per suïcidi, promovent l'intercanvi
+                        d'experiències i la recuperació emocional.
+                    </p>
+                </div>
+            </div>
+
+            <div class="content-grid mt-5">
+                <div class="content-item">
+                    <h3>Grups d'Ajuda Mútua</h3>
+                    <p>
+                        Facilitem espais de suport grupal per a persones que han
+                        perdut algú per suïcidi, promovent l'intercanvi
+                        d'experiències i la recuperació emocional.
+                    </p>
+                </div>
+                <div class="content-item">
+                    <h3>Grups d'Ajuda Mútua</h3>
+                    <p>
+                        Facilitem espais de suport grupal per a persones que han
+                        perdut algú per suïcidi, promovent l'intercanvi
+                        d'experiències i la recuperació emocional.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Contenido para "A qui ens dirigim" -->
+        <div class="tab-content" data-tab="a-qui-ens-dirigim">
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+                <TabCard
+                    title="Famílies i Amics"
+                    description="Donem orientació i suport a aquells que conviuen amb persones en risc, ajudant-los a comprendre i gestionar la situació amb empatia i efectivitat."
+                    backgroundImage="bg-hero-qui-som"
+                />
+                <TabCard
+                    title="Famílies i Amics"
+                    description="Donem orientació i suport a aquells que conviuen amb persones en risc, ajudant-los a comprendre i gestionar la situació amb empatia i efectivitat."
+                    backgroundImage="bg-multitud-hero"
+                />
+                <TabCard
+                    big={false}
+                    title="Famílies i Amics"
+                    description="Donem orientació i suport a aquells que conviuen amb persones en risc, ajudant-los a comprendre i gestionar la situació amb empatia i efectivitat."
+                    backgroundImage="bg-nenas-hero"
+                />
+            </div>
+            <div
+                class="grid
+                    grid-cols-1
+                    gap-8
+                    md:grid-cols-2
+                    mt-8"
+            >
+                <TabCard
+                    big={true}
+                    title="Famílies i Amics"
+                    description="Donem orientació i suport a aquells que conviuen amb persones en risc, ajudant-los a comprendre i gestionar la situació amb empatia i efectivitat."
+                    backgroundImage="bg-hero-qui-som"
+                />
+                <TabCard
+                    big={true}
+                    title="Famílies i Amics"
+                    description="Donem orientació i suport a aquells que conviuen amb persones en risc, ajudant-los a comprendre i gestionar la situació amb empatia i efectivitat."
+                    backgroundImage="bg-hero-qui-som"
+                />
+            </div>
+        </div>
+
+        <div class="tab-content" data-tab="el-nostre-equip">
+            <div class="flex gap-10 flex-col">
+                <div class="md:w-[50%] w-full flex flex-col gap-3">
+                    <p>
+                        El nostre equip està format per psicòlegs, treballadors
+                        socials, i experts en salut mental, tots ells dedicats a
+                        la prevenció del suïcidi.
+                    </p>
+                    <p>
+                        Treballem conjuntament amb voluntaris i col·laboradors
+                        per oferir un servei integral i accessible a tothom que
+                        ho necessiti.
+                    </p>
+                </div>
+                <div class="flex gap-2 flex-col">
+                    <Accordion title="Socis treballadors" isOpen={true}>
+                        <div class="grid grid-cols-1 gap-3 md:grid-cols-3">
+                            <TabCard
+                                title="Soci 1"
+                                description="Li agrda el pebrot Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu"
+                                backgroundImage="bg-hero-qui-som"
+                                white={true}
+                            />
+                            <TabCard
+                                title="Soci 2"
+                                description="Li agrda el pebrot vermell Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu"
+                                backgroundImage="bg-hero-qui-som"
+                                white={true}
+                            />
+                            <TabCard
+                                title="Soci 3"
+                                description=" Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu"
+                                backgroundImage="bg-hero-qui-som"
+                                white={true}
+                            />
+                        </div>
+                    </Accordion>
+                    <Accordion title="Socis col·laboradors">
+                        <div class="grid grid-cols-1 gap-3 md:grid-cols-3">
+                            <TabCard
+                                title="Soci 1"
+                                description="Li agrda el pebrot Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu"
+                                backgroundImage="bg-hero-qui-som"
+                                white={true}
+                            />
+                            <TabCard
+                                title="Soci 2"
+                                description="Li agrda el pebrot vermell Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu"
+                                backgroundImage="bg-hero-qui-som"
+                                white={true}
+                            />
+                            <TabCard
+                                title="Soci 3"
+                                description=" Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu"
+                                backgroundImage="bg-hero-qui-som"
+                                white={true}
+                            />
+                        </div>
+                    </Accordion>
+                    <Accordion title="Centres col·laboradors">
+                        <div class="grid grid-cols-1 gap-3 md:grid-cols-3">
+                            <TabCard
+                                title="Soci 1"
+                                description="Li agrda el pebrot Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu"
+                                backgroundImage="bg-hero-qui-som"
+                                white={true}
+                            />
+                            <TabCard
+                                title="Soci 2"
+                                description="Li agrda el pebrot vermell Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu"
+                                backgroundImage="bg-hero-qui-som"
+                                white={true}
+                            />
+                            <TabCard
+                                title="Soci 3"
+                                description=" Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu Pim pam trucu trucu"
+                                backgroundImage="bg-hero-qui-som"
+                                white={true}
+                            />
+                        </div>
+                    </Accordion>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" data-tab="els-nostres-valors">
+            <div class="content-grid">
+                <div class="content-item">
+                    <h3>Teràpia Psicològica</h3>
+                    <p>
+                        Oferim teràpia individual i grupal per a persones amb
+                        idees suïcides, adaptant-nos a diferents edats i
+                        necessitats, amb l'objectiu de millorar la seva salut
+                        mental.
+                    </p>
+                </div>
+                <div class="content-item">
+                    <h3>Grups d'Ajuda Mútua</h3>
+                    <p>
+                        Facilitem espais de suport grupal per a persones que han
+                        perdut algú per suïcidi, promovent l'intercanvi
+                        d'experiències i la recuperació emocional.
+                    </p>
+                </div>
+                <div class="content-item">
+                    <h3>Grups d'Ajuda Mútua</h3>
+                    <p>
+                        Facilitem espais de suport grupal per a persones que han
+                        perdut algú per suïcidi, promovent l'intercanvi
+                        d'experiències i la recuperació emocional.
+                    </p>
+                </div>
+            </div>
+
+            <div class="content-grid mt-5">
+                <div class="content-item">
+                    <h3>Grups d'Ajuda Mútua</h3>
+                    <p>
+                        Facilitem espais de suport grupal per a persones que han
+                        perdut algú per suïcidi, promovent l'intercanvi
+                        d'experiències i la recuperació emocional.
+                    </p>
+                </div>
+                <div class="content-item">
+                    <h3>Grups d'Ajuda Mútua</h3>
+                    <p>
+                        Facilitem espais de suport grupal per a persones que han
+                        perdut algú per suïcidi, promovent l'intercanvi
+                        d'experiències i la recuperació emocional.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .tab-button {
+        padding: 8px 20px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 22px;
+        transition: linear 0.3s;
+        font-family: "Instrument Serif", serif;
+    }
+    .tab-button.active {
+        background-color: var(--yellow);
+        border-radius: 8px 8px 0 0;
+    }
+    .tab-content {
+        display: none;
+        padding: 20px 0;
+        animation: fadeIn 0.5s ease-in-out;
+    }
+    .tab-content.active {
+        display: block;
+    }
+    .content-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    .content-flex {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .content-item,
+    .content-card {
+        background-color: var(--yellow);
+        padding: 20px;
+        border-radius: 5px;
+
+        h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+    }
+    .content-card {
+        flex: 1 1 300px;
+    }
+    .content-card img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 10px;
+    }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+</style>
+
+<script>
+    function setupTabs() {
+        const tabButtons =
+            document.querySelectorAll<HTMLButtonElement>(".tab-button");
+        const tabContents =
+            document.querySelectorAll<HTMLDivElement>(".tab-content");
+
+        tabButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const tabId = button.getAttribute("data-tab");
+
+                tabButtons.forEach((btn) => btn.classList.remove("active"));
+                tabContents.forEach((content) =>
+                    content.classList.remove("active")
+                );
+
+                button.classList.add("active");
+
+                const activeContent = document.querySelector<HTMLDivElement>(
+                    `.tab-content[data-tab="${tabId}"]`
+                );
+                if (activeContent) {
+                    activeContent.classList.add("active");
+                }
+            });
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", setupTabs);
+</script>

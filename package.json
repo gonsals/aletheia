@@ -14,7 +14,12 @@
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource/instrument-serif": "^5.0.21",
     "astro": "^4.5.16",
+    "astro-navbar": "^2.3.3",
     "tailwindcss": "^3.4.10",
     "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@iconify-json/tabler": "^1.1.121",
+    "astro-icon": "^1.1.1"
   }
 }
