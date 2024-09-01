@@ -1,29 +1,39 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Slider from "../components/home/Slider";
+
+const images = [
+    {
+        src: "/imagesProba/heroQuiSom.png",
+        alt: "Qui som",
+    },
+    {
+        src: "/imagesProba/heroQuiSom.png",
+        alt: "Qui som",
+    },
+];
 ---
 
 <Layout title="Alétheia Web">
-    <main>
-        <h1>Hola MARIA guapa</h1>
+    <main
+        class="flex flex-col items-center justify-center uppercase font-instrument-serif gap-1 leading-none text-center p-10"
+    >
+        <h1 class="flex flex-col text-[#A63C06] text-[200px]">
+            Lorem <span class="text-black">ipsum</span>
+        </h1>
     </main>
+    <!-- call to action amarillo -->
+    <div
+        class="flex flex-col items-center justify-center py-20 px-24 bg-[var(--yellow)]"
+    >
+        <h3 class="text-2xl">
+            Quan les vides pengen a la vora, som els guardians de l'esperança.
+            Som veritables guerrers, lluitant contra les marees de la
+            desesperació.
+        </h3>
+    </div>
+    <div class="bg-black p-10">
+        <img src="/imagesProba/heroQuiSom.png" alt="bg-index" />
+    </div>
+    <Slider imagesArray={images} client:load />
 </Layout>
-
-<style>
-    main {
-        margin: auto;
-        padding: 1rem;
-        width: 800px;
-        max-width: calc(100% - 2rem);
-        color: white;
-        font-size: 20px;
-        line-height: 1.6;
-    }
-
-    h1 {
-        font-size: 4rem;
-        font-weight: 700;
-        line-height: 1;
-        text-align: center;
-        margin-bottom: 1em;
-    }
-</style>
